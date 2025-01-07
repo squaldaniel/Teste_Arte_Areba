@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { Inertia } from "@inertiajs/inertia";
 import { usePage } from '@inertiajs/react';
+import Grid from '../Components/Grid'
 
 const MusicManager = () => {
   const { props } = usePage(); // Pega dados do backend via Inertia

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\SongController;
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -29,3 +30,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// Rotas para CRUD de músicas
+Route::post('/songs', [SongController::class, 'store'])->name('songs.store');
+Route::put('/songs/{song}', [SongController::class, 'update'])->name('songs.update');
+Route::delete('/songs/{song}', [SongController::class, 'destroy'])->name('songs.destroy');
