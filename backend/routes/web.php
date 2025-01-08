@@ -16,7 +16,10 @@ use App\Http\Controllers\SongController;
 // });
 
 Route::get('/', function(){
-    return Inertia::render('Music');
+    $songs = App\Models\Song::all();
+    return Inertia::render('Music', [
+        'songs' => $songs
+    ]);
 });
 
 Route::get('/dashboard', function () {

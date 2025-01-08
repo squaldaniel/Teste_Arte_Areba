@@ -1,8 +1,9 @@
-export default function Grid(props){
+function Grid (){
 return (
     <>
     <div className="grid">
-        { props }
+
     </div>
     </>
 )}
+export default Grid
