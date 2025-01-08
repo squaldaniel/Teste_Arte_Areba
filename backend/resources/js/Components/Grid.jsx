@@ -1,8 +1,8 @@
-function Grid (){
+function Grid ({conteudo}){
 return (
     <>
-    <div className="grid">
-
+    <div className="container">
+        {conteudo}
     </div>
     </>
 )}

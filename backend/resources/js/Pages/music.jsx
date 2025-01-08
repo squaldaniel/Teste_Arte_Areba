@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Component } from 'react';
 import { Inertia } from "@inertiajs/inertia";
 import { usePage } from '@inertiajs/react';
-import Grid from '../Components/Grid';
 
 const MusicManager = () => {
   const { props } = usePage(); // Pega dados do backend via Inertia
@@ -33,10 +32,16 @@ const MusicManager = () => {
   };
 
   return (
+    <>
+    <div class="container">
+        <div class="row">
+        <div class="col-auto">teste</div>
+        <div class="col-auto">teste2</div>
+        </div>
+    </div>
     <div>
-      <h1>Gerenciador de Músicas</h1>
-      <Grid/>
-      <h2>Adicionar Música</h2>
+      <h1 class="display-1">Gerenciador de Músicas</h1>
+      <h2>link da musica</h2>
       <input
         type="text"
         value={newSong}
@@ -68,6 +73,7 @@ const MusicManager = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 
