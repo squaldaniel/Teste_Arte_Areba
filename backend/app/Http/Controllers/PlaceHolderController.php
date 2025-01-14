@@ -90,8 +90,16 @@ class PlaceHolderController extends Controller
     {
         return $this->getUrl('todos');
     }
-    public function getusers()
+    public function getAllUsers()
     {
         return $this->getUrl('users');
+    }
+    public function getUsers()
+    {
+        return $this->getUrl('users');
+    }
+    public function postUsers(Request $request)
+    {
+        return $request->all();
     }
 }
