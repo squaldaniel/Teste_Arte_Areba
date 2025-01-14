@@ -1,0 +1,35 @@
+# Use a imagem oficial do PHP 8.3
+FROM php:8.3-fpm
+
+# Instale extensões e dependências necessárias
+RUN apt-get update && apt-get install -y \
+    zip \
+    unzip \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    libzip-dev \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+
+# Instale o Composer
+COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
+
+# Configure o diretório de trabalho
+WORKDIR /var/www/html
+
+# Copie os arquivos da aplicação
+COPY . .
+
+# Instale dependências do Laravel
+RUN composer install
+
+# Ajuste permissões
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Exponha a porta 8000
+EXPOSE 8000
+
+# Comando para iniciar o servidor PHP
+CMD php artisan serve --host=0.0.0.0 --port=8000
