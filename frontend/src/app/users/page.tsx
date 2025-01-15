@@ -31,7 +31,7 @@ const UsersPage = () => {
   };
 
   return (
-    <div>
+    <>
       <h1>Usuários</h1>
       <ul>
         {users.map((user) => (
@@ -54,9 +54,8 @@ const UsersPage = () => {
         onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
       />
       <button onClick={handleCreateUser}>Criar</button>
-    </div>
+    </>
   );
 };
 
 export default UsersPage;
-  
