@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { getUsers, createUser, User } from '../services/userServices';
+import Listuser from '../components/listuser';
 
 const UsersPage = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -33,6 +34,7 @@ const UsersPage = () => {
   return (
     <>
       <h1>Usuários</h1>
+      <Listuser />
       <ul>
         {users.map((user) => (
           <li key={user.id}>
