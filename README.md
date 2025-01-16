@@ -1,4 +1,4 @@
-# TESTE para vaga na Emrpesa TechPines
+# TESTE para vaga na Emrpesa Arte Arena
 
 Desenvolvido por @squaldaniel, o teste para a vaga de programador exige conhecimentos das tecnologias:
 
