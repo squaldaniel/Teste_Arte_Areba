@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid2';
 // import avios from 'axios';
 
@@ -7,8 +6,6 @@ export default function ButtonUsage() {
   
   return (
     <>
-
-        <Button variant="contained">Ola mundo</Button>
         <Grid container spacing={2}>
           <Grid size={8}>
             dados 8

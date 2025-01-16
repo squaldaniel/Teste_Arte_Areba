@@ -3,16 +3,19 @@
 import React, { useEffect, useState } from 'react';
 import { getUsers, createUser, User } from '../services/userServices';
 import Listuser from '../components/listuser';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Pagination from '@mui/material/Pagination';
 
 const UsersPage = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [newUser, setNewUser] = useState({ name: '', email: '' });
-
+  
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await getUsers();
-        setUsers(response);
+        setUsers(response.data);
       } catch (err) {
         console.error(err);
       }
@@ -34,28 +37,18 @@ const UsersPage = () => {
   return (
     <>
       <h1>Usuários</h1>
-      <Listuser />
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.name} - {user.email}
-          </li>
-        ))}
-      </ul>
       <h2>Criar Novo Usuário</h2>
-      <input
-        type="text"
-        placeholder="Nome"
-        value={newUser.name}
-        onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={newUser.email}
-        onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-      />
-      <button onClick={handleCreateUser}>Criar</button>
+      <TextField id="user-name" label="Nome" variant="outlined" onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} />
+      <TextField id="user-email" label="Email" variant="outlined" onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} />
+      <Button
+        onClick={handleCreateUser}
+        variant="contained"
+        disabled={!newUser.name || !newUser.email}
+      >
+        Criar
+      </Button>
+      <Listuser Listuser={users} />
+      
     </>
   );
 };
