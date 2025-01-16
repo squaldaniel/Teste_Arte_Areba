@@ -7,6 +7,9 @@ Desenvolvido por @squaldaniel, o teste para a vaga de programador exige conhecim
 * Mysql
 * ReactJs
 * Docker
+Arquivo PDF explicando o [teste:](Teste_para_Desenvolvedor_FullStack.pdf)
+
+
 para visualizar o teste. realizae o clone do repositório:
 ````
 git clone https://github.com/squaldaniel/Teste_Techpines
