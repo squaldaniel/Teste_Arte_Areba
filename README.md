@@ -3,7 +3,8 @@
 
 > [!NOTE]
 > Arquivo PDF explicando o [teste:](Teste_para_Desenvolvedor_FullStack.pdf)
-Desenvolvido por @squaldaniel.
+
+**Programador:** Daniel Santos
  
 > [!IMPORTANT]
 > tecnologias:
@@ -25,3 +26,6 @@ docker-compose up
 ![img001](img/teste_002.png)
 Aguarde o Docker carregar a imagem e deposi acesso o backend na url localhost:8000 e frontend na porta localhost:3000.
 ![img001](img/teste_003.png)
+
+> [!IMPORTANT]
+> Achamos que ao invês do job, que é uma ação que precisa de outra para que ocorra, seria mais prático criar uma comando do Artisan que realiza a atualização e agendarmos o mesmo na cron d imagem linux. Então ao subir a imagem já é criado um tarefa para _todo dias_ as **23:59**.
