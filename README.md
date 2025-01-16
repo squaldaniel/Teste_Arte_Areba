@@ -23,5 +23,5 @@ Ao acessar a pasta clonada via prompt de comando, e estando o docker e docker co
 docker-compose up
 ````
 ![img001](img/teste_002.png)
-Aguarde o Docker carregar a imagem e deposi acesso o backend na url localhost:8000 e frontend na porta localhost:3000:
+Aguarde o Docker carregar a imagem e deposi acesso o backend na url localhost:8000 e frontend na porta localhost:3000.
 ![img001](img/teste_003.png)
