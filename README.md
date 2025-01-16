@@ -6,7 +6,7 @@
 
 **Programador:** Daniel Santos
  
-> [!IMPORTANT]
+> [!NOTE]
 > tecnologias:
 > * Laravel (backend)
 > * Mysql (banco de dados)
