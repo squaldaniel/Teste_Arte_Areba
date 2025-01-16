@@ -1,4 +1,4 @@
-# TESTE para vaga na Emrpesa Arte Arena
+# TESTE para vaga na Emrpesa Arte Arena ![logo](https://acdn.mitiendanube.com/stores/001/594/756/themes/common/logo-90280179-1735823139-ba80f4f10e2c52f0b774086bd52bf0f01735823140-320-0.webp)
 
 Desenvolvido por @squaldaniel, o teste para a vaga de programador exige conhecimentos das tecnologias:
 
