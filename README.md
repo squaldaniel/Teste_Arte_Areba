@@ -30,7 +30,7 @@ Aguarde o Docker carregar a imagem e deposi acesso o backend na url localhost:80
 > [!IMPORTANT]
 > Achamos que ao invês do job, que é uma ação que precisa de outra para que ocorra, seria mais prático criar uma comando do Artisan que realiza a atualização e agendarmos o mesmo na cron da imagem linux. Então ao subir a imagem já é criado um tarefa para _todo dias_ as **23:59**.
 
-Docker-compose conm os container rodando:
+Docker-compose com os container rodando:
 ![docker-compose](img/teste_001.png)
 
 > [!CAUTION]
