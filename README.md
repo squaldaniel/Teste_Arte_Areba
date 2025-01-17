@@ -34,4 +34,4 @@ Docker-compose conm os container rodando:
 ![docker-compose](img/teste_001.png)
 
 > [!CAUTION]
-> Na descrição do teste é solicitado a documentação com 
+> Para ver a importação dos dados, execute o comando <code>php artisan updatedata</code>

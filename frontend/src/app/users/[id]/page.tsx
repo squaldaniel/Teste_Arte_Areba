@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { Container, Typography, CircularProgress } from '@mui/material';
+import { Container, Typography, CircularProgress, Button } from '@mui/material';
+import Link from 'next/link';  // Corrigir para importar de 'next/link'
 import api from '../../services/api';
 
 const UserPage = () => {
@@ -13,10 +14,13 @@ const UserPage = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        console.log(`Buscar usuário com id: ${id}`);
         const response = await api.get(`/users/${id}`);
-        setUser(response.data);
+        setUser(response[0]);
+        console.log(response);
       } catch (error) {
-        console.error('Erro ao buscar usuário:', error);
+        console.error('Erro ao buscar usuário:', error.response || error.message);
+        setUser(null);
       } finally {
         setLoading(false);
       }
@@ -48,12 +52,19 @@ const UserPage = () => {
       <Typography variant="h4" gutterBottom>
         Dados do Usuário
       </Typography>
-      <Typography variant="body1">ID: {user.id}</Typography>
-      <Typography variant="body1">Nome: {user.name}</Typography>
-      <Typography variant="body1">Username: {user.username}</Typography>
-      <Typography variant="body1">Email: {user.email}</Typography>
-      <Typography variant="body1">Telefone: {user.phone}</Typography>
-      <Typography variant="body1">Website: {user.website}</Typography>
+      <Typography variant="body1">ID: <b>{user.id}</b></Typography>
+      <Typography variant="body1">Nome: <b>{user.name}</b></Typography>
+      <Typography variant="body1">Username: <b>{user.username}</b></Typography>
+      <Typography variant="body1">Email: <b>{user.email}</b></Typography>
+      <Typography variant="body1">Telefone: <b>{user.phone}</b></Typography>
+      <Typography variant="body1">Website: <b>{user.website}</b></Typography>
+
+      {/* Link para a página /users */}
+      <Link href="/users" passHref>
+        <Button variant="contained" color="primary" sx={{ marginTop: '20px' }}>
+          Ir para a lista de usuários
+        </Button>
+      </Link>
     </Container>
   );
 };
