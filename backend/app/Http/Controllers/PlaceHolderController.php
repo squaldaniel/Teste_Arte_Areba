@@ -76,8 +76,13 @@ class PlaceHolderController extends Controller
     {
         return $this->getUrl('todos');
     }
-    public function getUsers() //ok
+    public function getUsers(Request $request)
     {
+        $query = $request->input('query');
+        if ($query) {
+            return UsersModel::where('name', 'like', "%{$query}%")
+                ->paginate(10);
+        }
         return UsersModel::paginate(10);
     }
     public function postUsers(Request $request)
@@ -115,6 +120,11 @@ class PlaceHolderController extends Controller
             return !in_array($item['id'], $existsIds);
         });
         return $newData;
+    }
+    public function getusersdetail(Request $request)
+    {
+        $userdetail = UsersModel::where('id', $request->id)->get();
+        return $userdetail;
     }
 }
 ;
