@@ -34,4 +34,4 @@ Docker-compose conm os container rodando:
 ![docker-compose](img/teste_001.png)
 
 > [!CAUTION]
-> Para ver a importação dos dados, execute o comando <code>php artisan updatedata</code>
+> Para ver a importação dos dados, execute o comando <code>php artisan updatedata</code>. Isso executará o comando que também está agendado, paar trazer os dados do site https://jsonplaceholder.typicode.com
